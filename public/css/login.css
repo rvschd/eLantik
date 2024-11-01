@@ -1,0 +1,222 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    /* Change to your chosen minimalist font */
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+.login-container {
+    max-width: 600px;
+    margin: 150px auto;
+    padding: 40px;
+    border-radius: 15px;
+    background-color: #fff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+}
+
+h2 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%;
+    padding: 20px 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+    border-color: #007bff;
+}
+
+input::placeholder {
+    color: transparent;
+}
+
+.form-group label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #999;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    background-color: white;
+    padding: 0 5px;
+}
+
+input:focus+label,
+input:not(:placeholder-shown)+label {
+    top: 5px;
+    left: 10px;
+    font-size: 12px;
+    color: #007bff;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 15px;
+    background-color: transparent;
+    color: #818992;
+    border: 2px solid #778491;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: #707983;
+    color: white;
+    font-weight: bold;
+}
+
+.btn-login svg {
+    margin-left: 8px;
+    fill: currentColor;
+}
+
+.text-center {
+    text-align: center;
+    margin-top: 20px;
+}
+
+footer {
+    background-color: #333333;
+    /* Change to your desired shade of grey */
+    padding: 20px 0;
+    /* Add some padding for spacing */
+    text-align: center;
+    /* Center the text */
+}
+
+footer p {
+    margin: 10px 0;
+    /* Adjust margin for spacing between lines */
+    color: #CCCCCC;
+    /* Optional: change the text color if needed */
+}
+
+.footer-logo {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.footer-logo img {
+    max-width: 100%;
+    /* Ensure the logo is responsive */
+    height: auto;
+    max-height: 150px;
+    /* Optional: limit height of logo */
+}
+
+.no-underline {
+    text-decoration: none;
+}
+
+.no-underline:hover {
+    text-decoration: none;
+}
+
+header {
+    background-color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-left img {
+    max-width: 60px;
+    /* Resize logo */
+    height: auto;
+    margin-right: 10px;
+    /* Adjust space between logo and title */
+}
+
+.header-title {
+    font-size: 20px;
+    font-weight: bold;
+    white-space: nowrap;
+    /* Prevent title from wrapping */
+}
+
+/* Navigation links */
+.header-links {
+    display: flex;
+    justify-content: center;
+}
+
+.header-links a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    /* Change to your desired color (e.g., dark gray) */
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    /* Change the font family */
+    font-weight: bold;
+    /* Make the font bold */
+    transition: color 0.3s ease;
+    /* Add a transition effect for hover */
+}
+
+.header-links a:hover {
+    color: #847b7b;
+    /* Change color on hover (e.g., red) */
+    text-decoration: underline;
+    /* Optional: add underline on hover */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    color: #666;
+    z-index: 2;
+}
+
+.toggle-password:hover {
+    color: #333;
+}
+
+.toggle-password:focus {
+    outline: none;
+}
+
+/* Make sure the icon is properly sized */
+.toggle-password i {
+    font-size: 1rem;
+}

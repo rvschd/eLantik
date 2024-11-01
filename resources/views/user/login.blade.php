@@ -4,130 +4,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login - eLantik</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #f8f9fa;
-        }
+    <title>KEMENTERIAN EKONOMI</title>
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
-        .card {
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .card-header {
-            background-color: #7a8998;
-            color: white;
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
-            position: relative;
-        }
-
-        .form-label {
-            font-weight: bold;
-        }
-
-        .btn-primary {
-            background-color: #7a8998;
-            border: none;
-        }
-
-        .btn-primary:hover {
-            background-color: #0056b3;
-        }
-
-        .footer-link {
-            color: #7a8998;
-            text-decoration: none;
-        }
-
-        .footer-link:hover {
-            text-decoration: underline;
-        }
-
-        .logo-img {
-            max-height: 80px;
-        }
-
-        .footer-img {
-            max-height: 60px;
-            margin-bottom: 10px;
-        }
-
-        .card-footer {
-            padding-top: 15px;
-        }
-    </style>
 </head>
 
 <body>
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header text-center">
-                        <!-- Jata Negara Image at the top -->
-                        <img src="{{ asset('images/jata_negara.png') }}" alt="Jata Negara" class="logo-img">
-                        <h3>Login to eLantik</h3>
-                    </div>
-                    <div class="card-body">
-                        <!-- Fake Login Form -->
-                        <form action="{{ route('fakeLogin') }}" method="POST">
-                            @csrf
-                            <!-- Email or Username -->
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email or Username</label>
-                                <input type="text" class="form-control" id="email" name="email" required>
-                            </div>
+    <header>
+        <div class="header-left">
+            <img src="{{ asset('images/jata_negara.png') }}" alt="Logo">
+            <div class="header-title">SISTEM PENGURUSAN PROFIL AHLI LEMBAGA PENGARAH</div>
+        </div>
+    </header>
 
-                            <!-- Password -->
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password" name="password" required>
-                            </div>
+    <div class="login-container">
+        <h2>Log Masuk</h2>
+        <form action="{{ route('dashboard') }}" method="GET">
+            @csrf
+            <div class="form-group">
+                <input type="text" id="id" name="id" required placeholder=" ">
+                <label for="id">ID Pengguna</label>
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" name="password" required placeholder=" ">
+                <label for="password">Kata Laluan</label>
+                <button type="button" class="toggle-password" onclick="togglePassword()">
+                    <i class="fas fa-eye"></i>
+                </button>
+            </div>
 
-                            <!-- Dropdown for Main Modules -->
-                            <div class="mb-3">
-                                <label for="module" class="form-label">Select Module</label>
-                                <select class="form-select" id="module" name="module" required>
-                                    <option value="" disabled selected>Select a module</option>
-                                    <option value="{{ route('officer_profiles.index') }}">Modul Pencalonan</option>
-                                    <option value="{{ route('appointments.index') }}">Modul Pelantikan</option>
-                                    <option value="{{ route('board_members.index') }}">Modul Pengurusan</option>
-                                    <option value="{{ route('archives.tamat_tempoh') }}">Modul Arkib</option>
-                                    <option value="{{ route('reports.nama_nokp_jawatan') }}">Modul Laporan</option>
-                                    <option value="{{ route('dashboard.index') }}">Dashboard</option>
-                                    <option value="{{ route('maintenance.syarikat_agensi') }}">Modul Penyelenggaraan
-                                    </option>
-                                    <option value="{{ route('user.login') }}">Modul Pengguna</option>
-                                </select>
-                            </div>
-
-                            <!-- Submit Button -->
-                            <div class="d-grid gap-2">
-                                <button type="submit" class="btn btn-primary btn-block">Login</button>
-                            </div>
-                        </form>
-                    </div>
-
-                    <div class="card-footer text-center">
-                        <!-- Malaysia Madani Image above the footer links -->
-                        <div>
-                            <img src="{{ asset('images/malaysia_madani.jpg') }}" alt="Malaysia Madani"
-                                class="footer-img">
-                        </div>
-                        <a href="{{ route('password.request') }}" class="footer-link">Forgot Your Password?</a><br>
-                    </div>
-                </div>
+            <button type="submit" class="btn-login">
+                Log Masuk ↪
+                <path fill-rule="evenodd"
+                    d="M10.354 3.646a.5.5 0 0 1 0 .708L7.707 7H14.5a.5.5 0 0 1 0 1H7.707l2.647 2.646a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0z" />
+                </svg>
+            </button>
+        </form>
+        <div class="text-center">
+            <div class="text-center">
+                <a href="{{ route('password') }}" class="footer-link" style="text-decoration: none;">Lupa Kata
+                    Laluan?</a>
             </div>
         </div>
     </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <footer>
+        <div class="footer-logo">
+            <img src="{{ asset('images/malaysia_madani.jpg') }}" alt="Logo">
+            <p>✉️ukk@ekonomi.gov.my ☏+603 8090294 / 2095 <br>Kementerian Ekonomi<br>Menara Prisma<br>No. 26 Persiaran
+                Perdana, Presint 3<br>Pusat Pentadbiran Kerajaan Persekutuan<br> Putrajaya</p>
+        </div>
+    </footer>
+
+    <script>
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const toggleButton = document.querySelector('.toggle-password i');
+
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleButton.classList.remove('fa-eye');
+                toggleButton.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                toggleButton.classList.remove('fa-eye-slash');
+                toggleButton.classList.add('fa-eye');
+            }
+        }
+    </script>
+
 </body>
 
 </html>
