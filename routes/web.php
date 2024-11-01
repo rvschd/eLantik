@@ -4,7 +4,7 @@ use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/login', function () {
-    return view('login'); // for design
+    return view('user.login'); // for design
 })->name('login');
 
 Route::get('/dashboard', function () {
